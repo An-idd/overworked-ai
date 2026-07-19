@@ -70,8 +70,13 @@ async function main() {
 
   const tier = tierOf(stats);
   const locale = await loadLocale(o.lang);
-  o.skin = o.skin || SKIN_BY_TOOL[stats.dominantTool] || "xiaoke"; // auto by dominant tool
-  const { chosen, fired } = selectCard(stats, { template: o.template, lang: o.lang });
+
+  // Same week re-run keeps the SAME card (data may change, template shouldn't).
+  // Locked at first generation; --template still forces a different one.
+  const weekKey = stats.weekLabel;
+  const locked = state.weeks?.[weekKey];
+  o.skin = o.skin || locked?.skin || SKIN_BY_TOOL[stats.dominantTool] || "xiaoke";
+  const { chosen, fired } = selectCard(stats, { template: o.template || locked?.card, lang: o.lang });
 
   let copy = null;
   if (!o["no-ai"]) {
@@ -91,14 +96,20 @@ async function main() {
   if (isFirstRun(state)) await seedFirstRun(state, todayISO);
   const earnedBefore = new Set(Object.keys(state.cards).filter((id) => state.cards[id].earned));
 
-  // Record the rendered card; unlock every fired rare into the album (even ones
-  // whose card art doesn't exist yet).
-  const streakReset = await recordCard(state, { id: chosen.id, weekStartISO: stats.weekStartISO, todayISO });
+  // First generation of this week: count it, advance streak, lock the card.
+  // Re-run (locked): just refresh the image with new data — no count/streak bump.
+  let streakReset = false;
+  if (!locked) {
+    state.weeks = state.weeks || {};
+    state.weeks[weekKey] = { card: chosen.id, skin: o.skin };
+    streakReset = await recordCard(state, { id: chosen.id, weekStartISO: stats.weekStartISO, todayISO });
+  }
+  // Always unlock any fired rares into the album, even on a refresh (data grew).
   for (const c of fired) if (c.id !== chosen.id) await markEarned(state, c.id, todayISO);
   const p = progress(state);
 
   console.log(`\n过劳等级:${tier.name} ${tier.stars}`);
-  console.log(`卡片已生成 → ${outPath}  [${chosen.rarity} · ${chosen.zh}]`);
+  console.log(`${locked ? "本周已出过,已用最新数据刷新" : "卡片已生成"} → ${outPath}  [${chosen.rarity} · ${chosen.zh}]`);
   for (const c of fired) {
     const isNew = !earnedBefore.has(c.id);
     const art = renderable(c.id, svgLangOf(o.lang)) ? "" : "(卡面制作中)";
@@ -106,7 +117,7 @@ async function main() {
   }
   console.log(`已收集 ${p.earned}/${p.total} 张 · 连续出卡 ${state.streak_weeks} 周`);
   if (streakReset) console.log("(上周没出卡,连击归零了~ 没事,这周继续攒)");
-  console.log("晒出去吧,老板 🫡");
+  console.log(locked ? "(同周刷新:只更新了数据/文案,收集数不变)" : "晒出去吧,老板 🫡");
 }
 
 main().catch((e) => { console.error(e.message); process.exit(1); });

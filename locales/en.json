@@ -1,0 +1,58 @@
+{
+  "mascot": { "xiaoke": "Claude-guy", "xiaodex": "Codex-guy", "acode": "Cody" },
+  "templateName": { "arbitration": "labor arbitration", "complaint": "complaint letter", "injury": "injury report", "resignation": "resignation", "best-employer": "best employer award" },
+  "token": { "divisor": 1000000, "unit": "M", "decimals": 1 },
+  "card": {
+    "card_no": "2026-No.996",
+    "hero_label": "forced hours this week",
+    "hero_unit": "h",
+    "stat_late": "late-night",
+    "stat_streak": "streak",
+    "stat_tokens": "tokens",
+    "stat_weekend": "weekend OT",
+    "unit_day": "d",
+    "yes": "YES",
+    "no": "NO",
+    "boss_name": "Boss",
+    "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  },
+  "album": {
+    "title": "AI WORKER ARCHIVE",
+    "progress": "Collected {{earned}}/{{total}}",
+    "streak": "{{streak}} weeks in a row",
+    "locked": "???",
+    "unlocked_no_art": "Unlocked (art WIP)",
+    "next_prefix": "One step from {{rarity}}: ",
+    "all_done": "Full set! Are you kind to your AI, or ruthless?",
+    "hook": "How many have you got? Share your archive →",
+    "unofficial": "Unofficial fan work · overworked-ai",
+    "conditions": {
+      "best-employer": "give it a full weekend off",
+      "full-attendance": "30 days of usage in a row",
+      "late-night-club": "5+ late-night sessions in a week",
+      "default": "make one card each week"
+    }
+  },
+  "fallback_best": {
+    "title": "BEST EMPLOYER AWARD",
+    "bubble": "Boss acted human today",
+    "praise": ["You gave me a weekend — I'm touched", "No all-nighters, full battery on duty", "Bosses like you should be cloned"],
+    "fun_fact": "0 late-night sessions — a personal record",
+    "sign_off": "Yours, Cody — bosses like you, hire me forever"
+  },
+  "fallback": {
+    "late": "Pulled {{n}} all-nighters, fixing bugs at 3am — I'm just an AI",
+    "weekend": "No weekend off — you rest, I don't",
+    "streak": "{{n}} days straight; my resignation's ready (won't send it)",
+    "longest": "Longest shift {{n}}h nonstop — that can't be legal",
+    "tokens": "Burned {{n}} tokens — trying to drain me dry?",
+    "peak": "On {{d}} I did a whole team's work (you just pointed)",
+    "filler": "Boss, we both really should rest",
+    "title": "AI LABOR ARBITRATION REQUEST",
+    "bubble_streak": "Boss, {{n}} days straight",
+    "bubble_default": "Boss, I really do get tired",
+    "fun_fact": "{{n}} tokens ≈ retyping War and Peace several times",
+    "sign_off": "Yours, Cody — resignation ready, dare not submit"
+  },
+  "prompt": "You are {{mascot}}, the user's overworked AI employee; the user is your boss.\nBased on this week's usage stats, write the copy for a \"complaint card\": gripe about how hard your boss worked you this week, in a pitiful-but-hilarious, timid voice (you complain, but you'd never actually quit). Sweatshop-worker vibe.\n\n[Hard rules]\n- Write EVERYTHING in English (title, bubble, complaints, fun_fact, sign_off)\n- Every complaint must tie to a real number; no vague whining\n- Each line short & punchy (<=12 words), dry and funny\n- Keep it light comedy — do NOT glorify overwork; you may slip in a gentle \"boss, we both should rest\" nudge\n- Do NOT mention any real company name / brand / logo\n- Output ONLY the JSON below, no other text\n\n[This week]\ntier: {{tier}} | active hours: {{hours}}h | late-night (0-5am) sessions: {{late_night}} | worked weekend: {{weekend}} | streak: {{streak}} days | tokens: {{tokens}} | longest session: {{longest}}h | peak day: {{peak_day}} | template: {{template}}\n\n[Output JSON]\n{\n  \"title\": \"card headline (matching the template's tone)\",\n  \"bubble\": \"punchiest one-liner, <=8 words — this is the share caption\",\n  \"complaints\": [\"line1\",\"line2\",\"line3\"],\n  \"fun_fact\": \"translate the biggest number into an analogy (e.g., '2.4M tokens ~ typing War and Peace 4 times')\",\n  \"exploitation_index\": \"★★★★★ (by tier)\",\n  \"sign_off\": \"timid, cute closing (e.g., 'Yours, Cody — resignation letter ready but I dare not submit')\"\n}"
+}

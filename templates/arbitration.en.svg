@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <style>
+      .serif  { font-family: "Georgia","Times New Roman","Noto Serif",serif; }
+      .serifI { font-family: "Georgia","Times New Roman","Noto Serif",serif; font-style:italic; }
+      .mono   { font-family: "JetBrains Mono","Menlo","Courier New",monospace; }
+      .sans   { font-family: "Helvetica Neue","Arial","Noto Sans",sans-serif; }
+      .red    { fill:#c8161d; }
+      .ink    { fill:#1a1a1a; }
+      .gray   { fill:#8a8a8a; }
+    </style>
+    <path id="stamp-arc-top" d="M 850 1215 a 105 105 0 1 1 210 0"/>
+  </defs>
+
+  <!-- paper -->
+  <rect width="1080" height="1350" fill="#ffffff"/>
+
+  <!-- (1) letterhead -->
+  <text x="540" y="108" text-anchor="middle" class="serif red" font-size="46" font-weight="900" letter-spacing="1">AI LABOR ARBITRATION REQUEST</text>
+  <text x="540" y="180" text-anchor="middle" class="serif ink" font-size="30">Case No. {{card_no}}</text>
+  <rect x="60" y="212" width="960" height="6" class="red"/>
+
+  <!-- rarity badge -->
+  <g transform="translate(978,66)">
+    <rect x="-46" y="-30" width="92" height="46" rx="9" class="red"/>
+    <text x="0" y="4" text-anchor="middle" class="sans" fill="#ffffff" font-size="28" font-weight="900">{{rarity}}</text>
+  </g>
+
+  <!-- (2) mascot slot -->
+  <rect x="70" y="270" width="400" height="540" fill="#f5f7fa"/>
+  <text x="270" y="550" text-anchor="middle" class="sans gray" font-size="26">{{skin_placeholder}}</text>
+  <image href="{{skin_image}}" x="70" y="270" width="400" height="540" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- speech bubble -->
+  <g>
+    <rect x="480" y="258" width="540" height="88" rx="44" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+    <path d="M 520 340 L 490 380 L 560 344 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="497" y="335" width="70" height="12" fill="#ffffff"/>
+    <text x="750" y="314" text-anchor="middle" class="serif ink" font-size="34" font-weight="700">{{bubble}}</text>
+  </g>
+
+  <!-- hero number -->
+  <text x="760" y="500" text-anchor="middle" class="mono ink" font-size="140" font-weight="900">{{hero_value}}</text>
+  <text x="760" y="558" text-anchor="middle" class="serif ink" font-size="32">{{hero_label}}</text>
+
+  <!-- 2x2 data grid -->
+  <g stroke="#1a1a1a" stroke-width="3" fill="none">
+    <rect x="545" y="600" width="430" height="250"/>
+    <line x1="760" y1="600" x2="760" y2="850"/>
+    <line x1="545" y1="725" x2="975" y2="725"/>
+  </g>
+  <text x="652" y="653" text-anchor="middle" class="serif ink" font-size="26">{{stat1_label}}</text>
+  <text x="652" y="702" text-anchor="middle" class="mono ink" font-size="36" font-weight="700">{{stat1_value}}</text>
+  <text x="868" y="653" text-anchor="middle" class="serif ink" font-size="26">{{stat2_label}}</text>
+  <text x="868" y="702" text-anchor="middle" class="mono ink" font-size="36" font-weight="700">{{stat2_value}}</text>
+  <text x="652" y="778" text-anchor="middle" class="serif ink" font-size="26">{{stat3_label}}</text>
+  <text x="652" y="827" text-anchor="middle" class="mono ink" font-size="36" font-weight="700">{{stat3_value}}</text>
+  <text x="868" y="778" text-anchor="middle" class="serif ink" font-size="26">{{stat4_label}}</text>
+  <text x="868" y="827" text-anchor="middle" class="mono ink" font-size="36" font-weight="700">{{stat4_value}}</text>
+
+  <!-- fun_fact + exploitation index -->
+  <text x="760" y="892" text-anchor="middle" class="sans gray" font-size="22">{{fun_fact}}</text>
+  <text x="600" y="938" text-anchor="middle" class="serif ink" font-size="34" font-weight="900">Exploitation Index</text>
+  <text x="860" y="942" text-anchor="middle" class="red" font-size="44">{{stars}}</text>
+  <text x="760" y="976" text-anchor="middle" class="sans red" font-size="23" font-weight="700">Beats {{percentile}} of bosses this week</text>
+
+  <!-- divider -->
+  <rect x="60" y="985" width="960" height="5" class="red"/>
+
+  <!-- (4) arbitration claims -->
+  <text x="80" y="1055" class="serif ink" font-size="38" font-weight="900">Arbitration claims:</text>
+  <text x="80" y="1112" class="serifI ink" font-size="28">1. {{complaint_1}}</text>
+  <text x="80" y="1168" class="serifI ink" font-size="28">2. {{complaint_2}}</text>
+  <text x="80" y="1224" class="serifI ink" font-size="28">3. {{complaint_3}}</text>
+
+  <!-- (5) sign-off + stamp -->
+  <text x="80" y="1300" class="serif ink" font-size="30" font-weight="700">{{sign_off}}</text>
+  <g transform="rotate(-12 955 1215)" opacity="0.85">
+    <circle cx="955" cy="1215" r="108" fill="none" stroke="#d3251f" stroke-width="7"/>
+    <circle cx="955" cy="1215" r="96" fill="none" stroke="#d3251f" stroke-width="2"/>
+    <path d="M955 1178 l11 23 25 3 -18 18 4 25 -22 -12 -22 12 4 -25 -18 -18 25 -3 Z" fill="#d3251f"/>
+    <text class="serif" fill="#d3251f" font-size="24" font-weight="700" letter-spacing="2">
+      <textPath href="#stamp-arc-top" startOffset="10%">AI WORKERS UNION</textPath>
+    </text>
+    <text x="955" y="1288" text-anchor="middle" class="serif" fill="#d3251f" font-size="18" letter-spacing="1">ARBITRATION SEAL</text>
+  </g>
+
+  <!-- footer -->
+  <text x="60" y="1338" class="sans gray" font-size="20">Unofficial fan work</text>
+  <text x="540" y="1338" text-anchor="middle" class="sans gray" font-size="18">handwritten by me · overworked-ai</text>
+</svg>

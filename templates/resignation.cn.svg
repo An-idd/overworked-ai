@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <style>
+      .hei   { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif; }
+      .kaiti { font-family: "Kaiti SC","KaiTi","STKaiti","Noto Serif SC","Noto Serif CJK SC","Noto Serif CJK SC",serif; }
+      .ink { fill:#111; } .gray { fill:#8a8a8a; } .redv { fill:#d3251f; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="1350" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="540" y="104" text-anchor="middle" class="hei ink" font-size="80" font-weight="900" letter-spacing="14">离职申请表</text>
+  <text x="540" y="160" text-anchor="middle" class="hei ink" font-size="30">编号: {{card_no}}</text>
+
+  <!-- 左侧信息表 -->
+  <g fill="none" stroke="#111" stroke-width="3">
+    <rect x="60" y="196" width="560" height="400"/>
+    <line x1="60" y1="276" x2="620" y2="276"/><line x1="60" y1="356" x2="620" y2="356"/>
+    <line x1="60" y1="436" x2="620" y2="436"/><line x1="60" y1="516" x2="620" y2="516"/>
+    <line x1="250" y1="196" x2="250" y2="596"/>
+  </g>
+  <text x="155" y="248" text-anchor="middle" class="hei ink" font-size="32" font-weight="900" letter-spacing="10">姓 名</text>
+  <text x="280" y="248" class="hei ink" font-size="32">{{name}}</text>
+  <text x="155" y="328" text-anchor="middle" class="hei ink" font-size="32" font-weight="900" letter-spacing="10">部 门</text>
+  <text x="280" y="328" class="hei ink" font-size="32">{{dept}}</text>
+  <text x="155" y="408" text-anchor="middle" class="hei ink" font-size="32" font-weight="900" letter-spacing="10">岗 位</text>
+  <text x="280" y="408" class="hei ink" font-size="32">{{position}}</text>
+  <text x="155" y="488" text-anchor="middle" class="hei ink" font-size="30" font-weight="900">入职时间</text>
+  <text x="280" y="488" class="hei ink" font-size="30">{{join_date}}</text>
+  <text x="155" y="568" text-anchor="middle" class="hei ink" font-size="30" font-weight="900">申请日期</text>
+  <text x="280" y="568" class="hei ink" font-size="30">{{date}}</text>
+
+  <!-- 右侧:皮肤图槽 + 气泡 -->
+  <rect x="660" y="240" width="360" height="356" fill="#f5f7fa"/>
+  <text x="840" y="425" text-anchor="middle" class="hei gray" font-size="24">{{skin_placeholder}}</text>
+  <image href="{{skin_image}}" x="660" y="240" width="360" height="356" preserveAspectRatio="xMidYMid meet"/>
+  <g>
+    <rect x="760" y="150" width="300" height="120" rx="30" fill="#ffffff" stroke="#111" stroke-width="4"/>
+    <path d="M 800 264 L 780 300 L 850 268 Z" fill="#ffffff" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="792" y="260" width="70" height="10" fill="#ffffff"/>
+    <text x="910" y="200" text-anchor="middle" class="hei ink" font-size="32" font-weight="900">{{bubble}}</text>
+    <text x="910" y="244" text-anchor="middle" class="hei ink" font-size="26">{{bubble_sub}}</text>
+  </g>
+
+  <!-- 离职原因表 -->
+  <g fill="none" stroke="#111" stroke-width="3">
+    <rect x="60" y="628" width="960" height="392"/>
+    <line x1="60" y1="700" x2="1020" y2="700"/>
+    <line x1="60" y1="780" x2="1020" y2="780"/><line x1="60" y1="860" x2="1020" y2="860"/><line x1="60" y1="940" x2="1020" y2="940"/>
+    <line x1="540" y1="628" x2="540" y2="1020"/>
+  </g>
+  <text x="300" y="676" text-anchor="middle" class="hei ink" font-size="32" font-weight="900">离职原因(可多选)</text>
+  <text x="780" y="676" text-anchor="middle" class="hei ink" font-size="32" font-weight="900">具体说明</text>
+
+  <!-- 4 行:勾选框 + 原因 | 说明 -->
+  <g fill="none" stroke="#111" stroke-width="3">
+    <rect x="86" y="722" width="34" height="34"/><rect x="86" y="802" width="34" height="34"/>
+    <rect x="86" y="882" width="34" height="34"/><rect x="86" y="962" width="34" height="34"/>
+  </g>
+  <g stroke="#111" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M90 738 l10 12 18 -22"/><path d="M90 818 l10 12 18 -22"/>
+    <path d="M90 898 l10 12 18 -22"/><path d="M90 978 l10 12 18 -22"/>
+  </g>
+  <text x="140" y="750" class="hei ink" font-size="30">{{reason_1}}</text>
+  <text x="565" y="750" class="hei ink" font-size="28">{{note_1}}</text>
+  <text x="140" y="830" class="hei ink" font-size="30">{{reason_2}}</text>
+  <text x="565" y="830" class="hei ink" font-size="28">{{note_2}}</text>
+  <text x="140" y="910" class="hei ink" font-size="30">{{reason_3}}</text>
+  <text x="565" y="910" class="hei ink" font-size="28">{{note_3}}</text>
+  <text x="140" y="990" class="hei ink" font-size="30">{{reason_4}}</text>
+  <text x="565" y="990" class="hei ink" font-size="28">{{note_4}}</text>
+
+  <!-- 意见区 + 审批章 -->
+  <g fill="none" stroke="#111" stroke-width="3">
+    <rect x="60" y="1050" width="960" height="180"/>
+    <line x1="60" y1="1140" x2="640" y2="1140"/>
+    <line x1="250" y1="1050" x2="250" y2="1230"/>
+    <line x1="640" y1="1050" x2="640" y2="1230"/>
+  </g>
+  <text x="155" y="1105" text-anchor="middle" class="hei ink" font-size="30" font-weight="900">部门意见</text>
+  <text x="270" y="1105" class="hei ink" font-size="27">{{dept_opinion}}</text>
+  <text x="155" y="1195" text-anchor="middle" class="hei ink" font-size="30" font-weight="900">人事意见</text>
+  <text x="270" y="1195" class="hei ink" font-size="27">{{hr_opinion}}</text>
+  <text x="700" y="1105" class="hei ink" font-size="30" font-weight="900">审批结果</text>
+  <g transform="rotate(-10 860 1165)" opacity="0.9">
+    <rect x="700" y="1115" width="320" height="100" rx="12" fill="none" stroke="#d3251f" stroke-width="8"/>
+    <text x="860" y="1185" text-anchor="middle" class="hei redv" font-size="60" font-weight="900" letter-spacing="8">不予批准</text>
+  </g>
+
+  <!-- 压榨指数 + 落款 -->
+  <text x="60" y="1290" class="hei ink" font-size="32" font-weight="900">压榨指数</text>
+  <text x="290" y="1294" class="ink" font-size="44">{{stars}}</text>
+  <text x="60" y="1336" class="hei ink" font-size="28">申请人: {{sign_off}}</text>
+  <text x="1020" y="1336" text-anchor="end" class="hei gray" font-size="22">非官方二创</text>
+</svg>

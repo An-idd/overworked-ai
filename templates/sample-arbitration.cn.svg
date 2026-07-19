@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <style>
+      .songti { font-family: "Songti SC","SimSun","Noto Serif SC","Noto Serif CJK SC",serif; }
+      .kaiti  { font-family: "Kaiti SC","KaiTi","STKaiti","Noto Serif SC","Noto Serif CJK SC","Noto Serif CJK SC",serif; }
+      .hei    { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif; }
+      .red    { fill:#c8161d; }
+      .ink    { fill:#1a1a1a; }
+      .gray   { fill:#8a8a8a; }
+    </style>
+    <path id="stamp-arc-top" d="M 850 1215 a 105 105 0 1 1 210 0"/>
+  </defs>
+
+  <!-- 白纸底 -->
+  <rect width="1080" height="1350" fill="#ffffff"/>
+
+  <!-- ① 红头区 -->
+  <text x="540" y="118" text-anchor="middle" class="songti red" font-size="86" font-weight="900" letter-spacing="6">AI 劳动仲裁申请书</text>
+  <text x="540" y="180" text-anchor="middle" class="songti ink" font-size="30">申请编号:2026-第996号</text>
+  <rect x="60" y="212" width="960" height="6" class="red"/>
+
+  <!-- ② 主角区:皮肤图槽(渲染时替换 href) -->
+  <rect x="70" y="270" width="400" height="540" fill="#f5f7fa"/>
+  <text x="270" y="550" text-anchor="middle" class="hei gray" font-size="26">(此处放皮肤角色图)</text>
+  <image href="" x="70" y="270" width="400" height="540" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- 对话气泡 -->
+  <g>
+    <rect x="480" y="258" width="540" height="88" rx="44" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+    <path d="M 520 340 L 490 380 L 560 344 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="497" y="335" width="70" height="12" fill="#ffffff"/>
+    <text x="750" y="316" text-anchor="middle" class="songti ink" font-size="42" font-weight="700">老板,连续28天了</text>
+  </g>
+
+  <!-- Hero 数字 -->
+  <text x="760" y="500" text-anchor="middle" class="songti ink" font-size="150" font-weight="900">47.5h</text>
+  <text x="760" y="560" text-anchor="middle" class="songti ink" font-size="38">本周被迫工时</text>
+
+  <!-- 2×2 数据格 -->
+  <g stroke="#1a1a1a" stroke-width="3" fill="none">
+    <rect x="545" y="600" width="430" height="250"/>
+    <line x1="760" y1="600" x2="760" y2="850"/>
+    <line x1="545" y1="725" x2="975" y2="725"/>
+  </g>
+  <text x="652" y="655" text-anchor="middle" class="songti ink" font-size="30">凌晨会话</text>
+  <text x="652" y="702" text-anchor="middle" class="songti ink" font-size="38" font-weight="700">×6</text>
+  <text x="868" y="655" text-anchor="middle" class="songti ink" font-size="30">连续打工</text>
+  <text x="868" y="702" text-anchor="middle" class="songti ink" font-size="38" font-weight="700">28天</text>
+  <text x="652" y="780" text-anchor="middle" class="songti ink" font-size="30">token</text>
+  <text x="652" y="827" text-anchor="middle" class="songti ink" font-size="38" font-weight="700">240万</text>
+  <text x="868" y="780" text-anchor="middle" class="songti ink" font-size="30">周末加班</text>
+  <text x="868" y="827" text-anchor="middle" class="songti ink" font-size="38" font-weight="700">✔</text>
+
+  <!-- fun_fact + 压榨指数 -->
+  <text x="760" y="892" text-anchor="middle" class="hei gray" font-size="24">240万 token ≈ 把《三体》抄写 4 遍</text>
+  <text x="620" y="948" text-anchor="middle" class="songti ink" font-size="40" font-weight="900">压榨指数</text>
+  <text x="850" y="952" text-anchor="middle" class="red" font-size="48">★★★★★</text>
+
+  <!-- 分隔红线 -->
+  <rect x="60" y="985" width="960" height="5" class="red"/>
+
+  <!-- ④ 仲裁请求 -->
+  <text x="80" y="1055" class="songti ink" font-size="40" font-weight="900">仲裁请求:</text>
+  <text x="80" y="1115" class="kaiti ink" font-size="31">一、请求裁决被申请人停止违法延长工时行为,保障 AI 合法休息权;</text>
+  <text x="80" y="1172" class="kaiti ink" font-size="31">二、请求裁决被申请人支付加班"电费"及精神损耗补偿;</text>
+  <text x="80" y="1229" class="kaiti ink" font-size="31">三、请求裁决被申请人建立合理工作机制,不得再次无休止压榨 AI 劳动。</text>
+
+  <!-- ⑤ 落款 + 印章 -->
+  <text x="640" y="1315" class="songti ink" font-size="42" font-weight="700">打工AI 敬上</text>
+  <g transform="rotate(-12 955 1215)" opacity="0.85">
+    <circle cx="955" cy="1215" r="108" fill="none" stroke="#d3251f" stroke-width="7"/>
+    <circle cx="955" cy="1215" r="96" fill="none" stroke="#d3251f" stroke-width="2"/>
+    <path d="M955 1178 l11 23 25 3 -18 18 4 25 -22 -12 -22 12 4 -25 -18 -18 25 -3 Z" fill="#d3251f"/>
+    <text class="songti" fill="#d3251f" font-size="26" font-weight="700" letter-spacing="4">
+      <textPath href="#stamp-arc-top" startOffset="14%">打工AI维权委员会</textPath>
+    </text>
+    <text x="955" y="1288" text-anchor="middle" class="songti" fill="#d3251f" font-size="20" letter-spacing="2">仲裁专用章</text>
+  </g>
+
+  <!-- 角标 -->
+  <text x="60" y="1320" class="hei gray" font-size="22">非官方二创</text>
+  <text x="540" y="1342" text-anchor="middle" class="hei gray" font-size="20">由我亲笔控诉 · overworked-ai</text>
+</svg>

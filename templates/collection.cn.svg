@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <style>
+      .hei   { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif; }
+      .ink { fill:#1b2430; } .white { fill:#ffffff; } .gray { fill:#9aa7b8; } .gold { fill:#c9971c; }
+    </style>
+    <linearGradient id="col-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#20304a"/><stop offset="1" stop-color="#141e30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 档案室深色底 -->
+  <rect width="1080" height="1350" fill="url(#col-bg)"/>
+
+  <!-- 顶栏 -->
+  <text x="540" y="96" text-anchor="middle" class="hei white" font-size="64" font-weight="900" letter-spacing="8">打工AI 档案室</text>
+  <text x="540" y="146" text-anchor="middle" class="hei" fill="#8fa3c2" font-size="26">COLLECTION · 我的投诉卡收藏</text>
+  <text x="270" y="204" text-anchor="middle" class="hei gold" font-size="32" font-weight="900">已收集 {{progress}}</text>
+  <text x="810" y="204" text-anchor="middle" class="hei gold" font-size="32" font-weight="900">连续出卡 {{streak}} 周</text>
+  <line x1="80" y1="232" x2="1000" y2="232" stroke="#3d5170" stroke-width="2"/>
+
+  <!-- 2×4 卡槽:每槽 224×356,含缩略图区 224×280 + 名称/稀有度 -->
+  <!-- 槽1 -->
+  <g>
+    <rect x="76" y="268" width="224" height="300" rx="14" fill="#ffffff" opacity="0.07"/>
+    <image href="{{slot1_image}}" x="86" y="278" width="204" height="240" preserveAspectRatio="xMidYMid meet"/>
+    <text x="188" y="548" text-anchor="middle" class="hei white" font-size="24" font-weight="700">{{slot1_name}}</text>
+    <text x="286" y="296" text-anchor="end" class="hei gold" font-size="22" font-weight="900">{{slot1_rarity}}</text>
+  </g>
+  <!-- 槽2 -->
+  <g>
+    <rect x="322" y="268" width="224" height="300" rx="14" fill="#ffffff" opacity="0.07"/>
+    <image href="{{slot2_image}}" x="332" y="278" width="204" height="240" preserveAspectRatio="xMidYMid meet"/>
+    <text x="434" y="548" text-anchor="middle" class="hei white" font-size="24" font-weight="700">{{slot2_name}}</text>
+    <text x="532" y="296" text-anchor="end" class="hei gold" font-size="22" font-weight="900">{{slot2_rarity}}</text>
+  </g>
+  <!-- 槽3 -->
+  <g>
+    <rect x="568" y="268" width="224" height="300" rx="14" fill="#ffffff" opacity="0.07"/>
+    <image href="{{slot3_image}}" x="578" y="278" width="204" height="240" preserveAspectRatio="xMidYMid meet"/>
+    <text x="680" y="548" text-anchor="middle" class="hei white" font-size="24" font-weight="700">{{slot3_name}}</text>
+    <text x="778" y="296" text-anchor="end" class="hei gold" font-size="22" font-weight="900">{{slot3_rarity}}</text>
+  </g>
+  <!-- 槽4 -->
+  <g>
+    <rect x="814" y="268" width="224" height="300" rx="14" fill="#ffffff" opacity="0.07"/>
+    <image href="{{slot4_image}}" x="824" y="278" width="204" height="240" preserveAspectRatio="xMidYMid meet"/>
+    <text x="926" y="548" text-anchor="middle" class="hei white" font-size="24" font-weight="700">{{slot4_name}}</text>
+    <text x="1024" y="296" text-anchor="end" class="hei gold" font-size="22" font-weight="900">{{slot4_rarity}}</text>
+  </g>
+  <!-- 槽5 -->
+  <g>
+    <rect x="76" y="608" width="224" height="300" rx="14" fill="#ffffff" opacity="0.07"/>
+    <image href="{{slot5_image}}" x="86" y="618" width="204" height="240" preserveAspectRatio="xMidYMid meet"/>
+    <text x="188" y="888" text-anchor="middle" class="hei white" font-size="24" font-weight="700">{{slot5_name}}</text>
+    <text x="286" y="636" text-anchor="end" class="hei gold" font-size="22" font-weight="900">{{slot5_rarity}}</text>
+  </g>
+  <!-- 槽6 -->
+  <g>
+    <rect x="322" y="608" width="224" height="300" rx="14" fill="#ffffff" opacity="0.07"/>
+    <image href="{{slot6_image}}" x="332" y="618" width="204" height="240" preserveAspectRatio="xMidYMid meet"/>
+    <text x="434" y="888" text-anchor="middle" class="hei white" font-size="24" font-weight="700">{{slot6_name}}</text>
+    <text x="532" y="636" text-anchor="end" class="hei gold" font-size="22" font-weight="900">{{slot6_rarity}}</text>
+  </g>
+  <!-- 槽7 -->
+  <g>
+    <rect x="568" y="608" width="224" height="300" rx="14" fill="#ffffff" opacity="0.07"/>
+    <image href="{{slot7_image}}" x="578" y="618" width="204" height="240" preserveAspectRatio="xMidYMid meet"/>
+    <text x="680" y="888" text-anchor="middle" class="hei white" font-size="24" font-weight="700">{{slot7_name}}</text>
+    <text x="778" y="636" text-anchor="end" class="hei gold" font-size="22" font-weight="900">{{slot7_rarity}}</text>
+  </g>
+  <!-- 槽8 -->
+  <g>
+    <rect x="814" y="608" width="224" height="300" rx="14" fill="#ffffff" opacity="0.07"/>
+    <image href="{{slot8_image}}" x="824" y="618" width="204" height="240" preserveAspectRatio="xMidYMid meet"/>
+    <text x="926" y="888" text-anchor="middle" class="hei white" font-size="24" font-weight="700">{{slot8_name}}</text>
+    <text x="1024" y="636" text-anchor="end" class="hei gold" font-size="22" font-weight="900">{{slot8_rarity}}</text>
+  </g>
+
+  <!-- 目标梯度提示 -->
+  <rect x="76" y="960" width="962" height="130" rx="20" fill="#ffffff" opacity="0.08"/>
+  <text x="110" y="1014" class="hei gold" font-size="30" font-weight="900">下一张卡</text>
+  <text x="110" y="1062" class="hei white" font-size="28">{{next_hint}}</text>
+
+  <!-- 皮肤展示位(可选:当前使用的 AI 员工) -->
+  <image href="{{skin_image}}" x="800" y="1080" width="220" height="220" preserveAspectRatio="xMidYMid meet"/>
+  <text x="540" y="1160" text-anchor="middle" class="hei" fill="#8fa3c2" font-size="26">{{album_quote}}</text>
+
+  <!-- 底栏 -->
+  <text x="80" y="1310" class="hei" fill="#5d7292" font-size="22">非官方二创</text>
+  <text x="540" y="1310" text-anchor="middle" class="hei" fill="#5d7292" font-size="22">你集齐了吗 · overworked-ai</text>
+</svg>

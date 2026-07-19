@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <style>
+      .hei   { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif; }
+      .kaiti { font-family: "Kaiti SC","KaiTi","STKaiti","Noto Serif CJK SC",serif; }
+      .ink { fill:#1b2430; } .white { fill:#ffffff; } .gray { fill:#93a0b4; } .accent { fill:#3f7dc4; }
+    </style>
+    <linearGradient id="cc-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf1fb"/><stop offset="1" stop-color="#d7e3f5"/>
+    </linearGradient>
+    <linearGradient id="cc-frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b8fd4"/><stop offset="1" stop-color="#2b5d9e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 卡框 -->
+  <rect width="1080" height="1350" rx="48" fill="url(#cc-frame)"/>
+  <rect x="26" y="26" width="1028" height="1298" rx="36" fill="url(#cc-bg)"/>
+
+  <!-- 顶栏:名字 + 工号 + 稀有度 -->
+  <rect x="26" y="26" width="1028" height="150" rx="36" fill="#2b5d9e"/>
+  <rect x="26" y="120" width="1028" height="56" fill="#2b5d9e"/>
+  <text x="80" y="122" class="hei white" font-size="66" font-weight="900">{{skin_name}}</text>
+  <text x="80" y="164" class="hei" fill="#bcd2ee" font-size="26">工号 {{skin_id}} · {{skin_dept}}</text>
+  <text x="1000" y="110" text-anchor="end" class="white" font-size="44">{{rarity}}</text>
+  <text x="1000" y="160" text-anchor="end" class="hei" fill="#bcd2ee" font-size="24">{{rarity_label}}</text>
+
+  <!-- 姿态立绘区(大) -->
+  <rect x="70" y="210" width="600" height="640" rx="24" fill="#ffffff" stroke="#b9cce6" stroke-width="3"/>
+  <text x="370" y="540" text-anchor="middle" class="hei gray" font-size="26">{{skin_placeholder}}</text>
+  <image href="{{skin_image}}" x="70" y="210" width="600" height="640" preserveAspectRatio="xMidYMid meet"/>
+  <!-- 姿态标签 -->
+  <rect x="70" y="796" width="600" height="54" rx="0" fill="#2b5d9e" opacity="0.85"/>
+  <text x="370" y="833" text-anchor="middle" class="hei white" font-size="28">当前姿态:{{pose_label}}</text>
+
+  <!-- 属性条(右侧) -->
+  <text x="720" y="252" class="hei ink" font-size="32" font-weight="900">员工属性</text>
+  <g class="hei">
+    <text x="720" y="308" class="hei ink" font-size="26">{{attr1_name}}</text>
+    <rect x="720" y="322" width="290" height="22" rx="11" fill="#c9d7ea"/>
+    <rect x="720" y="322" width="{{attr1_w}}" height="22" rx="11" fill="#3f7dc4"/>
+    <text x="720" y="396" class="hei ink" font-size="26">{{attr2_name}}</text>
+    <rect x="720" y="410" width="290" height="22" rx="11" fill="#c9d7ea"/>
+    <rect x="720" y="410" width="{{attr2_w}}" height="22" rx="11" fill="#e2953f"/>
+    <text x="720" y="484" class="hei ink" font-size="26">{{attr3_name}}</text>
+    <rect x="720" y="498" width="290" height="22" rx="11" fill="#c9d7ea"/>
+    <rect x="720" y="498" width="{{attr3_w}}" height="22" rx="11" fill="#d3554f"/>
+    <text x="720" y="572" class="hei ink" font-size="26">{{attr4_name}}</text>
+    <rect x="720" y="586" width="290" height="22" rx="11" fill="#c9d7ea"/>
+    <rect x="720" y="586" width="{{attr4_w}}" height="22" rx="11" fill="#57a06b"/>
+  </g>
+
+  <!-- 电量条(属性区下方,大号) -->
+  <text x="720" y="668" class="hei ink" font-size="26">当前电量</text>
+  <rect x="720" y="684" width="290" height="34" rx="17" fill="#c9d7ea" stroke="#8fa6c4" stroke-width="2"/>
+  <rect x="722" y="686" width="{{battery_w}}" height="30" rx="15" fill="{{battery_color}}"/>
+  <text x="865" y="760" text-anchor="middle" class="hei ink" font-size="24">{{battery_label}}</text>
+
+  <!-- 技能区 -->
+  <rect x="70" y="884" width="940" height="220" rx="20" fill="#ffffff" stroke="#b9cce6" stroke-width="3"/>
+  <text x="100" y="936" class="hei accent" font-size="30" font-weight="900">被动技能</text>
+  <text x="100" y="992" class="hei ink" font-size="28">◆ {{skill_1}}</text>
+  <text x="100" y="1042" class="hei ink" font-size="28">◆ {{skill_2}}</text>
+  <text x="100" y="1092" class="hei ink" font-size="28">◆ {{skill_3}}</text>
+
+  <!-- 台词区 -->
+  <rect x="70" y="1130" width="940" height="120" rx="20" fill="#22344c"/>
+  <text x="100" y="1180" class="kaiti" fill="#dce7f5" font-size="30">「{{quote}}」</text>
+  <text x="980" y="1230" text-anchor="end" class="hei" fill="#8fa6c4" font-size="24">—— {{skin_name}}</text>
+
+  <!-- 底栏 -->
+  <text x="70" y="1310" class="hei" fill="#6b7f99" font-size="22">非官方二创</text>
+  <text x="1010" y="1310" text-anchor="end" class="hei" fill="#6b7f99" font-size="22">选择你的 AI 员工 · overworked-ai</text>
+</svg>

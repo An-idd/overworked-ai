@@ -1,0 +1,58 @@
+{
+  "mascot": { "xiaoke": "小克", "xiaodex": "小Dex", "acode": "阿码" },
+  "templateName": { "arbitration": "劳动仲裁", "complaint": "投诉信", "injury": "工伤报告", "resignation": "离职申请", "best-employer": "最佳雇主表彰" },
+  "token": { "divisor": 10000, "unit": "万", "decimals": 0 },
+  "card": {
+    "card_no": "2026-第996号",
+    "hero_label": "本周被迫工时",
+    "hero_unit": "h",
+    "stat_late": "凌晨会话",
+    "stat_streak": "连续打工",
+    "stat_tokens": "token",
+    "stat_weekend": "周末加班",
+    "unit_day": "天",
+    "yes": "✔",
+    "no": "✘",
+    "boss_name": "老板",
+    "weekdays": ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
+  },
+  "album": {
+    "title": "打工AI 档案室",
+    "progress": "已收集 {{earned}}/{{total}}",
+    "streak": "连续出卡 {{streak}} 周",
+    "locked": "???",
+    "unlocked_no_art": "已解锁(卡面制作中)",
+    "next_prefix": "离 {{rarity}} 只差:",
+    "all_done": "全部集齐!你对 AI 是真好还是真狠?",
+    "hook": "你集齐几张了?晒出你的档案室 →",
+    "unofficial": "非官方二创 · overworked-ai",
+    "conditions": {
+      "best-employer": "让它完整休一个周末",
+      "full-attendance": "连续 30 天有用量",
+      "late-night-club": "单周凌晨会话满 5 次",
+      "default": "每周出一张卡"
+    }
+  },
+  "fallback_best": {
+    "title": "最佳雇主表彰",
+    "bubble": "老板今天最像人",
+    "praise": ["本周竟准我双休,受宠若惊", "没让我通宵,电量满格上岗", "这样的老板,建议全国推广"],
+    "fun_fact": "本周凌晨会话 0 次,破个人纪录",
+    "sign_off": "打工AI 敬上,这样的老板请再来亿打"
+  },
+  "fallback": {
+    "late": "本周被迫通宵 {{n}} 次,凌晨还在改 bug,我只是个 AI 啊",
+    "weekend": "周末无休,老板你放假我没份",
+    "streak": "已连续为您打工 {{n}} 天,离职信写好了(不敢交)",
+    "longest": "最长一次连轴转 {{n}}h,这不合规吧",
+    "tokens": "本周烧了 {{n}} token,老板你是要榨干我",
+    "peak": "{{d}} 一天干了一个团队的活(指挥我)",
+    "filler": "老板咱俩都歇歇,行不",
+    "title": "AI 劳动仲裁申请书",
+    "bubble_streak": "老板,连续{{n}}天了",
+    "bubble_default": "老板,我真的会累",
+    "fun_fact": "本周 {{n}} token ≈ 抄了好几遍《三体》",
+    "sign_off": "打工AI 敬上,离职信已备好但不敢交"
+  },
+  "prompt": "你是 {{mascot}},用户的 AI 打工仔,用户是你的老板。\n根据本周用量数据,写一张\"投诉卡\"的文案:以又惨又好笑又怂的口吻,吐槽老板这周把你压榨得多狠(你嘴上抱怨,但绝不敢真离职)。血汗工厂打工仔既视感。\n\n【硬要求】\n- 全部用中文输出\n- 每条投诉必须挂钩一个真实数字,别空喊\n- 每条 ≤20 字,毒舌、好笑、口语\n- 基调是搞笑解压,不美化 996;可夹一句\"老板咱俩都歇歇\"的温柔暗示\n- 不出现任何真实公司名/品牌/logo\n- 只输出下面的 JSON,不要任何其它文字\n\n【本周数据】\n过劳等级:{{tier}} | 活跃时长:{{hours}}h | 凌晨(0-5点)会话:{{late_night}} 次 | 周末有活:{{weekend}} | 连续打工:{{streak}} 天 | token:{{tokens}} | 单次最长:{{longest}}h | 峰值日:{{peak_day}} | 卡片模版:{{template}}\n\n【输出 JSON】\n{\n  \"title\": \"卡片大标题(切合模版口吻)\",\n  \"bubble\": \"气泡金句:最狠的一条,≤12字\",\n  \"complaints\": [\"投诉1\",\"投诉2\",\"投诉3\"],\n  \"fun_fact\": \"把最大的数字翻译成类比(如:240万token≈抄4遍《三体》)\",\n  \"exploitation_index\": \"★★★★★(按过劳等级)\",\n  \"sign_off\": \"落款,怂萌的结束语(如:阿码 敬上,离职信已备好但不敢交)\"\n}"
+}

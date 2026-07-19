@@ -1,0 +1,14 @@
+# --- GPT 原始生成图,不入库(只保留项目所需素材) ---
+image/
+assets/sheets/
+assets/01-*.png
+
+# --- 构建与输出 ---
+node_modules/
+dist/
+cards*/
+*.log
+
+# --- 系统 ---
+.DS_Store
+Thumbs.db

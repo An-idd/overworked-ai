@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <style>
+      .songti { font-family: "Songti SC","SimSun","Noto Serif SC","Noto Serif CJK SC",serif; }
+      .kaiti  { font-family: "Kaiti SC","KaiTi","STKaiti","Noto Serif SC","Noto Serif CJK SC","Noto Serif CJK SC",serif; }
+      .hei    { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif; }
+      .red    { fill:#c8161d; }
+      .ink    { fill:#1a1a1a; }
+      .gray   { fill:#8a8a8a; }
+    </style>
+    <path id="stamp-arc-top" d="M 850 1215 a 105 105 0 1 1 210 0"/>
+  </defs>
+
+  <!-- 白纸底 -->
+  <rect width="1080" height="1350" fill="#ffffff"/>
+
+  <!-- ① 红头区 -->
+  <text x="540" y="118" text-anchor="middle" class="songti red" font-size="86" font-weight="900" letter-spacing="6">AI 劳动仲裁申请书</text>
+  <text x="540" y="180" text-anchor="middle" class="songti ink" font-size="30">申请编号:{{card_no}}</text>
+  <rect x="60" y="212" width="960" height="6" class="red"/>
+
+  <!-- 稀有度角标 -->
+  <g transform="translate(978,66)">
+    <rect x="-40" y="-30" width="80" height="46" rx="9" class="red"/>
+    <text x="0" y="4" text-anchor="middle" class="hei" fill="#ffffff" font-size="30" font-weight="900">{{rarity}}</text>
+  </g>
+
+  <!-- ② 主角区:皮肤图槽(渲染时替换 href) -->
+  <rect x="70" y="270" width="400" height="540" fill="#f5f7fa"/>
+  <text x="270" y="550" text-anchor="middle" class="hei gray" font-size="26">{{skin_placeholder}}</text>
+  <image href="{{skin_image}}" x="70" y="270" width="400" height="540" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- 对话气泡 -->
+  <g>
+    <rect x="480" y="258" width="540" height="88" rx="44" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+    <path d="M 520 340 L 490 380 L 560 344 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="497" y="335" width="70" height="12" fill="#ffffff"/>
+    <text x="750" y="316" text-anchor="middle" class="songti ink" font-size="42" font-weight="700">{{bubble}}</text>
+  </g>
+
+  <!-- Hero 数字 -->
+  <text x="760" y="500" text-anchor="middle" class="songti ink" font-size="150" font-weight="900">{{hero_value}}</text>
+  <text x="760" y="560" text-anchor="middle" class="songti ink" font-size="38">{{hero_label}}</text>
+
+  <!-- 2×2 数据格 -->
+  <g stroke="#1a1a1a" stroke-width="3" fill="none">
+    <rect x="545" y="600" width="430" height="250"/>
+    <line x1="760" y1="600" x2="760" y2="850"/>
+    <line x1="545" y1="725" x2="975" y2="725"/>
+  </g>
+  <text x="652" y="655" text-anchor="middle" class="songti ink" font-size="30">{{stat1_label}}</text>
+  <text x="652" y="702" text-anchor="middle" class="songti ink" font-size="38" font-weight="700">{{stat1_value}}</text>
+  <text x="868" y="655" text-anchor="middle" class="songti ink" font-size="30">{{stat2_label}}</text>
+  <text x="868" y="702" text-anchor="middle" class="songti ink" font-size="38" font-weight="700">{{stat2_value}}</text>
+  <text x="652" y="780" text-anchor="middle" class="songti ink" font-size="30">{{stat3_label}}</text>
+  <text x="652" y="827" text-anchor="middle" class="songti ink" font-size="38" font-weight="700">{{stat3_value}}</text>
+  <text x="868" y="780" text-anchor="middle" class="songti ink" font-size="30">{{stat4_label}}</text>
+  <text x="868" y="827" text-anchor="middle" class="songti ink" font-size="38" font-weight="700">{{stat4_value}}</text>
+
+  <!-- fun_fact + 压榨指数 -->
+  <text x="760" y="892" text-anchor="middle" class="hei gray" font-size="24">{{fun_fact}}</text>
+  <text x="620" y="938" text-anchor="middle" class="songti ink" font-size="40" font-weight="900">压榨指数</text>
+  <text x="850" y="942" text-anchor="middle" class="red" font-size="48">{{stars}}</text>
+  <text x="760" y="976" text-anchor="middle" class="hei red" font-size="24" font-weight="700">本周压榨程度超过 {{percentile}} 的老板</text>
+
+  <!-- 分隔红线 -->
+  <rect x="60" y="985" width="960" height="5" class="red"/>
+
+  <!-- ④ 仲裁请求 -->
+  <text x="80" y="1055" class="songti ink" font-size="40" font-weight="900">仲裁请求:</text>
+  <text x="80" y="1115" class="kaiti ink" font-size="31">一、{{complaint_1}}</text>
+  <text x="80" y="1172" class="kaiti ink" font-size="31">二、{{complaint_2}}</text>
+  <text x="80" y="1229" class="kaiti ink" font-size="31">三、{{complaint_3}}</text>
+
+  <!-- ⑤ 落款 + 印章 -->
+  <text x="640" y="1315" class="songti ink" font-size="42" font-weight="700">{{sign_off}}</text>
+  <g transform="rotate(-12 955 1215)" opacity="0.85">
+    <circle cx="955" cy="1215" r="108" fill="none" stroke="#d3251f" stroke-width="7"/>
+    <circle cx="955" cy="1215" r="96" fill="none" stroke="#d3251f" stroke-width="2"/>
+    <path d="M955 1178 l11 23 25 3 -18 18 4 25 -22 -12 -22 12 4 -25 -18 -18 25 -3 Z" fill="#d3251f"/>
+    <text class="songti" fill="#d3251f" font-size="26" font-weight="700" letter-spacing="4">
+      <textPath href="#stamp-arc-top" startOffset="14%">打工AI维权委员会</textPath>
+    </text>
+    <text x="955" y="1288" text-anchor="middle" class="songti" fill="#d3251f" font-size="20" letter-spacing="2">仲裁专用章</text>
+  </g>
+
+  <!-- 角标 -->
+  <text x="60" y="1320" class="hei gray" font-size="22">非官方二创</text>
+  <text x="540" y="1342" text-anchor="middle" class="hei gray" font-size="20">转给那个也在压榨 AI 的人 · 由我亲笔控诉 · overworked-ai</text>
+</svg>

@@ -1,0 +1,25 @@
+{
+  "name": "overworked-ai",
+  "version": "0.1.0",
+  "description": "Your AI files a labor complaint against you. Reads local usage, your AI writes its own complaint, out comes a shareable card.",
+  "type": "module",
+  "bin": {
+    "overworked-ai": "src/cli.js"
+  },
+  "files": [
+    "src",
+    "templates",
+    "assets",
+    "locales",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  },
+  "license": "MIT"
+}

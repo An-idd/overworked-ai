@@ -6,7 +6,7 @@ assets/01-*.png
 # --- 构建与输出 ---
 node_modules/
 dist/
-cards*/
+/cards*/
 *.log
 
 # --- 系统 ---

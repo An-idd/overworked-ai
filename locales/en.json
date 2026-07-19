@@ -18,9 +18,11 @@
   },
   "album": {
     "title": "AI WORKER ARCHIVE",
+    "subtitle": "OVERWORKED AI · COLLECTION ARCHIVE · NO. 996",
     "progress": "Collected {{earned}}/{{total}}",
     "streak": "{{streak}} weeks in a row",
     "locked": "???",
+    "got": "Got {{d}}",
     "unlocked_no_art": "Unlocked (art WIP)",
     "next_prefix": "One step from {{rarity}}: ",
     "all_done": "Full set! Are you kind to your AI, or ruthless?",

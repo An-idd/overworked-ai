@@ -39,7 +39,7 @@ export async function collectClaudeCode() {
         if (!o.timestamp) continue;
         const ts = new Date(o.timestamp);
         if (Number.isNaN(ts.getTime())) continue;
-        events.push({ ts, sessionId, tokens: tokensOf(o.message && o.message.usage) });
+        events.push({ ts, sessionId, tokens: tokensOf(o.message && o.message.usage), tool: "claude-code" });
       }
     }
   }

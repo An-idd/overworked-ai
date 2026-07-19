@@ -69,6 +69,12 @@ export function aggregate(events, ref = new Date()) {
     activeDays.add(key);
   }
 
+  // Dominant tool this week (by tokens) → picks the default mascot skin.
+  const toolTok = {};
+  for (const e of week) toolTok[e.tool] = (toolTok[e.tool] || 0) + e.tokens;
+  let dominantTool = null, maxTok = -1;
+  for (const [t, v] of Object.entries(toolTok)) if (v > maxTok) { maxTok = v; dominantTool = t; }
+
   // Peak day = most tokens.
   let peakKey = null, peakTokens = -1;
   for (const [k, v] of tokensByDay) if (v > peakTokens) { peakTokens = v; peakKey = k; }
@@ -88,6 +94,7 @@ export function aggregate(events, ref = new Date()) {
     weekLabel: isoWeekLabel(ref),
     weekStartISO: iso(start),
     dailyStreak,
+    dominantTool,
     hours: +(activeMs / 3600000).toFixed(1),
     lateNight: lateSessions.size,
     weekend,

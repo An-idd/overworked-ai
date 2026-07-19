@@ -18,9 +18,11 @@
   },
   "album": {
     "title": "打工AI 档案室",
+    "subtitle": "OVERWORKED AI · COLLECTION ARCHIVE · 第 996 号",
     "progress": "已收集 {{earned}}/{{total}}",
     "streak": "连续出卡 {{streak}} 周",
     "locked": "???",
+    "got": "获得于 {{d}}",
     "unlocked_no_art": "已解锁(卡面制作中)",
     "next_prefix": "离 {{rarity}} 只差:",
     "all_done": "全部集齐!你对 AI 是真好还是真狠?",

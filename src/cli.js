@@ -13,11 +13,13 @@ import { selectCard, renderable, svgLangOf } from "./cards/select.js";
 import { renderAlbum } from "./render/album.js";
 
 const todayISO = new Date().toISOString().slice(0, 10);
+// Default mascot per dominant tool; --skin overrides.
+const SKIN_BY_TOOL = { "claude-code": "xiaoke", codex: "xiaodex" };
 
 const { values: o } = parseArgs({
   options: {
     lang: { type: "string", default: "zh" },
-    skin: { type: "string", default: "xiaoke" },
+    skin: { type: "string" }, // omit = auto by dominant tool
     template: { type: "string" }, // omit = auto-pick by trigger; set = force
     week: { type: "string" },
     out: { type: "string", default: "./cards" },
@@ -68,6 +70,7 @@ async function main() {
 
   const tier = tierOf(stats);
   const locale = await loadLocale(o.lang);
+  o.skin = o.skin || SKIN_BY_TOOL[stats.dominantTool] || "xiaoke"; // auto by dominant tool
   const { chosen, fired } = selectCard(stats, { template: o.template, lang: o.lang });
 
   let copy = null;

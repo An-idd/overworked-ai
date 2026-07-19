@@ -1,8 +1,10 @@
 import { claudeCodeAvailable, collectClaudeCode } from "./claude-code.js";
+import { codexAvailable, collectCodex } from "./codex.js";
 
-// Phase 1: only claude-code. New tools = one adapter returning RawEvent[].
+// One adapter per tool, each returning a unified RawEvent[]. New tools = add here.
 const ADAPTERS = [
   { tool: "claude-code", available: claudeCodeAvailable, collect: collectClaudeCode },
+  { tool: "codex", available: codexAvailable, collect: collectCodex },
 ];
 
 export function detectTools() {

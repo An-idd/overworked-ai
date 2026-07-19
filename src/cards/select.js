@@ -15,14 +15,17 @@ export const renderable = (id, svgLang) =>
 export const firedCards = (stats) => CARDS.filter((c) => c.trigger && c.trigger(stats));
 
 // Pick the card to render. --template forces it (explicit intent); otherwise the
-// highest-rarity RENDERABLE fired card wins, falling back to arbitration.
-export function selectCard(stats, { template, lang }) {
+// highest-rarity RENDERABLE, NOT-YET-EARNED fired card wins (each rare only takes
+// over the weekly card once — after that it lives in the album), else arbitration.
+export function selectCard(stats, { template, lang, earned = new Set() }) {
   const svgLang = svgLangOf(lang);
   const fired = firedCards(stats);
   let chosen;
   if (template) chosen = cardById(template) || { id: template, rarity: "N" };
   else {
-    const rf = fired.filter((c) => renderable(c.id, svgLang)).sort((a, b) => RARITY[b.rarity] - RARITY[a.rarity]);
+    const rf = fired
+      .filter((c) => !earned.has(c.id) && renderable(c.id, svgLang))
+      .sort((a, b) => RARITY[b.rarity] - RARITY[a.rarity]);
     chosen = rf[0] || cardById("arbitration");
   }
   return { chosen, fired };

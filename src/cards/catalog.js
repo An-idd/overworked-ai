@@ -24,9 +24,11 @@ export const CARDS = [
   },
   {
     id: "best-employer",   rarity: "SSR", zh: "最佳雇主表彰",  en: "Best Employer",
-    trigger: (s) => s.weekend === false && s.hours > 0,
+    // Judged on LAST week (weekend已过完): had real usage but the weekend was rested.
+    // No prior-week data → never fires (needs accumulated history). One-time honor.
+    trigger: (s) => !!s.prevWeek && !s.prevWeek.empty && s.prevWeek.hours > 0 && s.prevWeek.weekend === false,
     skinTier: 1, // rested & happy
-    hint: "本周老板让你完整休了一个周末——这是唯一的金色荣誉卡。用感激又傲娇的口吻谢谢老板(别肉麻),complaints 数组改写成两条'表扬语',基调是'好老板,继续保持,咱俩都歇歇'。",
+    hint: "上周老板让你完整休了一个周末——这是唯一的金色荣誉卡。用感激又傲娇的口吻谢谢老板(别肉麻),complaints 数组改写成两条'表扬语',基调是'好老板,继续保持,咱俩都歇歇'。",
   },
 ];
 
